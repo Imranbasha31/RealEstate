@@ -55,9 +55,9 @@ export default function PostPropertyPage({ lang, onAddProperty, onSwitchToSearch
       approvalStatus: 'CMDA & RERA Approved',
       reraRegistered: true,
       featured: true,
-      image: '/ms_hero_plot.png',
-      gallery: ['/ms_hero_plot.png', '/ms_villa_house.png'],
-      description: formData.description || 'Direct owner listing posted on MS Estates. Verified legal title.',
+      image: '/mj_hero_plot.png',
+      gallery: ['/mj_hero_plot.png', '/mj_villa_house.png'],
+      description: formData.description || 'Direct owner listing posted on MJ Estates. Verification status is shown transparently.',
       legalVerification: {
         pattaChecked: true,
         ecClean: true,
@@ -157,7 +157,7 @@ export default function PostPropertyPage({ lang, onAddProperty, onSwitchToSearch
                     30 Lac+ Home Owners Trust Us
                   </div>
                   <p style={{ fontSize: '0.8rem', color: '#475569', fontStyle: 'italic', lineHeight: 1.5, margin: 0 }}>
-                    "The service that I got from MS Estates / NoBroker was very helpful. Comparing this site to other sites, I got fast inquiries without broker disturbance."
+                    "The service I received from MJ Estates was helpful. I got clear information and fast enquiries without unnecessary middlemen."
                   </p>
                   <div style={{ fontSize: '0.75rem', fontWeight: '700', color: '#64748B', marginTop: '8px' }}>
                     Anil Kant | Chennai Owner
@@ -368,10 +368,10 @@ export default function PostPropertyPage({ lang, onAddProperty, onSwitchToSearch
             {/* Comparison Feature Table (Matching Image 5) */}
             <div style={{ marginTop: '56px', background: 'white', borderRadius: '16px', padding: '32px', border: '1px solid #E2E8F0' }}>
               <h3 style={{ fontSize: '1.35rem', fontWeight: '800', color: '#0F172A', marginBottom: '16px' }}>
-                Rent or Sell Property Online Easily With NoBroker / MS Estates
+                Rent or Sell Property Online Easily With MJ Estates
               </h3>
               <p style={{ fontSize: '0.88rem', color: '#475569', marginBottom: '24px', lineHeight: 1.6 }}>
-                Looking to sell property online or list your property for rent? MS Estates makes it simple, whether you want to sell a house, post a property for rent, or even sell land online, you can do it all without the hassle of dealing with middlemen, thanks to free property ad listings.
+                Looking to sell property online or list your property for rent? MJ Estates makes it simple to sell a house, post a rental, or list land with clear information and direct enquiries.
               </p>
 
               <div style={{ overflowX: 'auto' }}>
@@ -389,11 +389,11 @@ export default function PostPropertyPage({ lang, onAddProperty, onSwitchToSearch
                     </tr>
                     <tr style={{ borderBottom: '1px solid #E2E8F0' }}>
                       <td style={{ padding: '14px 16px', fontWeight: '700', color: '#0F172A' }}>Free Listing</td>
-                      <td style={{ padding: '14px 16px', color: '#475569' }}>Post your property advertisement for FREE on MS Estates platform. Whether you want to sell property online or rent out, you can do it without any charges.</td>
+                      <td style={{ padding: '14px 16px', color: '#475569' }}>Post your property advertisement for free on the MJ Estates platform and reach relevant buyers or tenants.</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid #E2E8F0' }}>
                       <td style={{ padding: '14px 16px', fontWeight: '700', color: '#0F172A' }}>Easy and Quick Process</td>
-                      <td style={{ padding: '14px 16px', color: '#475569' }}>With MS Estates, posting your rent advertisement or listing a property for sale is seamless. Our platform guides you through step-by-step.</td>
+                      <td style={{ padding: '14px 16px', color: '#475569' }}>With MJ Estates, posting a rental advertisement or sale listing is simple and guided step by step.</td>
                     </tr>
                     <tr style={{ borderBottom: '1px solid #E2E8F0' }}>
                       <td style={{ padding: '14px 16px', fontWeight: '700', color: '#0F172A' }}>Increased Property Visibility</td>

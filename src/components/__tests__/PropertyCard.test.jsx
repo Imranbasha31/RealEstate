@@ -7,7 +7,7 @@ const mockProperty = {
   id: 'p1',
   title: 'Test Plot',
   location: 'Testville',
-  image: '/ms_hero_plot.png',
+  image: '/mj_hero_plot.png',
   priceLabel: '₹28.0 Lakhs',
   ratePerSqFt: 1400,
   areaDisplay: '2,000 Sq.Ft',

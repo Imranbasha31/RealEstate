@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import AdminPortal from '../AdminPortal'
 
-const mockProps = [{ id: 'p1', title: 'A', image: '/ms_hero_plot.png', location: 'L', priceLabel: '₹10 Lakhs', areaDisplay: '1000 Sq.Ft', approvalStatus: 'CMDA & RERA Approved', featured: false }]
+const mockProps = [{ id: 'p1', title: 'A', image: '/mj_hero_plot.png', location: 'L', priceLabel: '₹10 Lakhs', areaDisplay: '1000 Sq.Ft', approvalStatus: 'CMDA & RERA Approved', featured: false }]
 const mockLeads = [{ id: 'l1', name: 'John', phone: '+91 99999', date: '2026-01-01', propTitle: 'A', status: 'New', message: 'Hi' }]
 
 describe('AdminPortal buttons', () => {

@@ -16,7 +16,7 @@ export default function MobileDock({ lang }) {
       </a>
 
       <a
-        href="https://wa.me/917200358300?text=Hi%20Imran%20Basha%20(MS%20Estates),%20I%20am%20looking%20for%20verified%20properties%20in%20Chennai%20/%20Thiruvallur."
+        href="https://wa.me/917200358300?text=Hi%20Imran%20Basha%20(MJ%20Estates),%20I%20am%20looking%20for%20verified%20properties%20in%20Chennai%20/%20Thiruvallur."
         target="_blank"
         rel="noopener noreferrer"
         className="btn-whatsapp"

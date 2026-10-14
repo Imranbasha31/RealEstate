@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Header from './components/Header';
 import HeroSearch from './components/HeroSearch';
 import PropertyCard from './components/PropertyCard';
@@ -10,7 +10,8 @@ import Footer from './components/Footer';
 import MobileDock from './components/MobileDock';
 import AdminPortal from './components/AdminPortal';
 import UserDashboard from './components/UserDashboard';
-import AuthModal from './components/AuthModal';
+import AuthPage from './components/AuthPage';
+import AdminLoginPage from './components/AdminLoginPage';
 import PostPropertyPage from './components/PostPropertyPage';
 import PayRentPage from './components/PayRentPage';
 import RentalAgreementPage from './components/RentalAgreementPage';
@@ -23,11 +24,23 @@ import { Grid, MapPin, SlidersHorizontal } from 'lucide-react';
 export default function App() {
   const [lang, setLang] = useState('en');
   // Pages: 'buyer' | 'post-property' | 'pay-rent' | 'rental-agreement' | 'home-loans' | 'admin' | 'user'
-  const [currentView, setCurrentView] = useState('buyer');
+  const [currentView, setCurrentView] = useState(() => (
+    typeof window !== 'undefined' && window.location.hash === '#admin' ? 'admin-login' : 'buyer'
+  ));
 
   // Auth User State & Modal
   const [user, setUser] = useState(null);
-  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [adminLoggedIn, setAdminLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      if (window.location.hash === '#admin') setCurrentView('admin-login');
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    handleHashChange();
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+  const [pendingAction, setPendingAction] = useState(null);
 
   // Dynamic Properties State
   const [propertiesList, setPropertiesList] = useState(INITIAL_PROPERTIES);
@@ -38,7 +51,7 @@ export default function App() {
       id: 'lead-1',
       name: 'Karthik Raja',
       phone: '+91 94433 12345',
-      propTitle: 'MS Layout — CMDA & RERA Approved Plot in Thiruvallur',
+      propTitle: 'MJ Layout — CMDA & RERA Approved Plot in Thiruvallur',
       message: 'Looking for a 4.5 cent plot for villa construction. Available this Sunday.',
       status: 'New',
       date: '08 Sep 2026'
@@ -47,7 +60,7 @@ export default function App() {
       id: 'lead-2',
       name: 'Priya Sundaram',
       phone: '+91 98421 67890',
-      propTitle: 'MS Prime City — Luxury 3BHK Villa in Chennai OMR',
+      propTitle: 'MJ Prime City — Luxury 3BHK Villa in Chennai OMR',
       message: 'Need bank loan assistance for OMR villa.',
       status: 'Contacted',
       date: '07 Sep 2026'
@@ -69,11 +82,38 @@ export default function App() {
 
   const isTa = lang === 'ta';
 
+  const requireAuth = (action) => {
+    if (user) {
+      action();
+      return;
+    }
+    setPendingAction(() => action);
+    setCurrentView('login');
+  };
+
+  const handleOpenDetail = (property) => {
+    requireAuth(() => {
+      setActiveModalProp(property);
+      setCurrentView('buyer');
+    });
+  };
+
+  const handleNavigate = (view) => {
+    const protectedViews = ['post-property', 'pay-rent', 'rental-agreement', 'home-loans', 'user'];
+    if (protectedViews.includes(view) && !user) {
+      setCurrentView('login');
+      return;
+    }
+    setCurrentView(view);
+  };
+
   // Toggle Save Property
   const handleToggleSave = (propId) => {
-    setSavedIds((prev) =>
-      prev.includes(propId) ? prev.filter((id) => id !== propId) : [...prev, propId]
-    );
+    requireAuth(() => {
+      setSavedIds((prev) =>
+        prev.includes(propId) ? prev.filter((id) => id !== propId) : [...prev, propId]
+      );
+    });
   };
 
   // Reset Filters
@@ -159,12 +199,40 @@ export default function App() {
         lang={lang}
         setLang={setLang}
         savedCount={savedIds.length}
-        onOpenSaved={() => setShowSavedModal(true)}
+        onOpenSaved={() => requireAuth(() => setShowSavedModal(true))}
+        onOpenAuthModal={() => setCurrentView('login')}
         currentView={currentView}
         setCurrentView={setCurrentView}
-        onOpenAuthModal={() => setShowAuthModal(true)}
         user={user}
       />
+
+      {(currentView === 'login' || currentView === 'signup') && (
+        <AuthPage
+          mode={currentView}
+          lang={lang}
+          onBack={(nextView) => setCurrentView(nextView || 'buyer')}
+          onSuccess={(userInfo) => {
+            setUser(userInfo);
+            if (pendingAction) {
+              const action = pendingAction;
+              setPendingAction(null);
+              action();
+            } else {
+              setCurrentView('user');
+            }
+          }}
+        />
+      )}
+
+      {currentView === 'admin-login' && (
+        <AdminLoginPage
+          onBack={() => setCurrentView('buyer')}
+          onSuccess={() => {
+            setAdminLoggedIn(true);
+            setCurrentView('admin');
+          }}
+        />
+      )}
 
       {/* PAGE 1: POST PROPERTY (LANDING & WIZARD) */}
       {currentView === 'post-property' && (
@@ -191,7 +259,7 @@ export default function App() {
       )}
 
       {/* PAGE 5: ADMIN PORTAL */}
-      {currentView === 'admin' && (
+      {currentView === 'admin' && adminLoggedIn && (
         <AdminPortal
           properties={propertiesList}
           onAddProperty={handleAddProperty}
@@ -209,7 +277,7 @@ export default function App() {
         <UserDashboard
           savedList={savedList}
           userLeads={leadsList}
-          onOpenDetail={(prop) => setActiveModalProp(prop)}
+          onOpenDetail={handleOpenDetail}
           onRemoveSaved={(id) => setSavedIds((prev) => prev.filter((i) => i !== id))}
           lang={lang}
         />
@@ -232,7 +300,7 @@ export default function App() {
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             onResetFilters={handleResetFilters}
-            onNavigate={(view) => setCurrentView(view)}
+            onNavigate={handleNavigate}
           />
 
           {/* Main Content Area */}
@@ -338,7 +406,7 @@ export default function App() {
                 </div>
 
                 <div style={{ background: '#1E293B', borderRadius: '12px', height: '260px', position: 'relative', overflow: 'hidden', border: '1px solid #334155', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <img src="/ms_hero_plot.png" alt="map preview" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4 }} />
+                  <img src="/mj_hero_plot.png" alt="map preview" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.4 }} />
                   <div style={{ position: 'absolute', background: 'rgba(15,23,42,0.85)', padding: '16px 20px', borderRadius: '12px', textAlign: 'center', backdropFilter: 'blur(6px)' }}>
                     <MapPin size={32} color="#0D9488" style={{ margin: '0 auto 8px auto' }} />
                     <div style={{ fontWeight: '700', fontSize: '0.9rem' }}>Interactive Map Pins Layer</div>
@@ -366,9 +434,11 @@ export default function App() {
                     key={property.id}
                     property={property}
                     lang={lang}
+                    isAuthenticated={Boolean(user)}
+                    onRequireAuth={() => requireAuth(() => setCurrentView('buyer'))}
                     isSaved={savedIds.includes(property.id)}
                     onToggleSave={handleToggleSave}
-                    onOpenDetail={(prop) => setActiveModalProp(prop)}
+                    onOpenDetail={handleOpenDetail}
                   />
                 ))}
               </div>
@@ -394,15 +464,7 @@ export default function App() {
       <MobileDock lang={lang} />
 
       {/* Live AI Assistant Floating Widget */}
-      <LiveChatWidget lang={lang} onNavigate={(view) => setCurrentView(view)} />
-
-      {/* Login / Sign Up Modal */}
-      <AuthModal
-        isOpen={showAuthModal}
-        onClose={() => setShowAuthModal(false)}
-        onLoginSuccess={(userInfo) => setUser(userInfo)}
-        lang={lang}
-      />
+      <LiveChatWidget lang={lang} onNavigate={handleNavigate} />
 
       {/* Property Detail Modal */}
       {activeModalProp && (
@@ -420,7 +482,7 @@ export default function App() {
           savedList={savedList}
           lang={lang}
           onClose={() => setShowSavedModal(false)}
-          onOpenDetail={(prop) => setActiveModalProp(prop)}
+          onOpenDetail={handleOpenDetail}
           onRemoveSaved={(id) => setSavedIds((prev) => prev.filter((i) => i !== id))}
         />
       )}

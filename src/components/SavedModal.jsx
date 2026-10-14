@@ -93,7 +93,7 @@ export default function SavedModal({ savedList, lang, onClose, onOpenDetail, onR
                         {isTa ? 'பார்க்க' : 'View'}
                       </button>
                       <a 
-                        href={`https://wa.me/919876543210?text=Hi%20MS%20Estates,%20interested%20in%20${encodeURIComponent(item.title)}`}
+                        href={`https://wa.me/919876543210?text=Hi%20MJ%20Estates,%20interested%20in%20${encodeURIComponent(item.title)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-whatsapp"

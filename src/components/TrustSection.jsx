@@ -23,7 +23,7 @@ export default function TrustSection({ lang }) {
     {
       icon: <Car size={28} color="#0D9488" />,
       title: isTa ? 'இலவச இடப் பார்வை சேவை' : 'Free Site Escort Service',
-      desc: isTa ? 'எங்கள் உள்ளூர் தளம் மேலாளர் உங்களை அழைத்து சென்று மனையை நேரில் காண்பிப்பார்.' : 'Our local MS Estates manager will pick you up and accompany you for a hands-on site inspection.'
+      desc: isTa ? 'எங்கள் உள்ளூர் தளம் மேலாளர் உங்களை அழைத்து சென்று மனையை நேரில் காண்பிப்பார்.' : 'Our local MJ Estates manager will accompany you for a hands-on site inspection.'
     }
   ];
 
@@ -32,10 +32,10 @@ export default function TrustSection({ lang }) {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', maxWidth: '650px', margin: '0 auto 48px auto' }}>
           <span className="brand-badge" style={{ marginBottom: '8px', display: 'inline-block' }}>
-            {isTa ? 'எம்.எஸ் நம்பிக்கை' : 'The MS Estates Guarantee'}
+            {isTa ? 'எம்.ஜே நம்பிக்கை' : 'The MJ Estates Promise'}
           </span>
           <h2 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#0F172A', lineHeight: 1.2 }}>
-            {isTa ? 'எங்கள் 4 கட்ட சட்டப் பாதுகாப்பு அம்சங்கள்' : 'Why Home Seekers Trust MS Estates'}
+            {isTa ? 'எங்கள் 4 கட்ட சரிபார்ப்பு அம்சங்கள்' : 'Why Home Seekers Trust MJ Estates'}
           </h2>
           <p style={{ color: '#64748B', fontSize: '1rem', marginTop: '10px' }}>
             {isTa ? 'தமிழ்நாட்டின் மிகச்சிறந்த ரியல் எஸ்டேட் அனுபவத்தை வழங்கும் எங்கள் நடைமுறை.' : 'We eliminate double registration risks and legal headaches with strict multi-step document audits.'}

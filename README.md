@@ -1,6 +1,6 @@
-# MS Estates
+# MJ Estates
 
-MS Estates is a Tamil Nadu-focused real-estate marketplace prototype built with React and Vite. It helps buyers discover plots, homes, farmland, and commercial properties with clearer listing information, documented verification status, and a direct enquiry workflow.
+MJ Estates is a Tamil Nadu-focused real-estate marketplace prototype built with React and Vite. It helps buyers discover plots, homes, farmland, and commercial properties with clearer listing information, documented verification status, and a direct enquiry workflow.
 
 ## Product scope
 
@@ -46,7 +46,7 @@ npm run preview # preview the production build
 - `src/App.jsx` — application state, views, filters, saved properties, and lead flow.
 - `src/data/properties.js` — sample districts, categories, and listing data.
 - `src/components/` — marketplace, admin, dashboard, posting, service, and modal components.
-- `src/index.css` — responsive MS Estates design system.
+- `src/index.css` — responsive MJ Estates design system.
 - `public/` — logo, property imagery, icons, and static assets.
 
 ## Current prototype limitations

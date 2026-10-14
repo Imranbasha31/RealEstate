@@ -55,7 +55,7 @@ export default function HeroSearch({
             {isTa ? (
               <>உலகின் மிகப்பெரிய <span style={{ color: '#CCFBF1' }}>தரகர் இல்லாத</span> சொத்து தளம்</>
             ) : (
-              <>World's Largest <span style={{ color: '#CCFBF1' }}>NoBrokerage</span> Property Site</>
+              <>Your Future Begins With The Right Property</>
             )}
           </h1>
 
@@ -66,7 +66,7 @@ export default function HeroSearch({
           </p>
         </div>
 
-        {/* Search & Filter Card (Matching NoBroker Tab Search) */}
+        {/* Search and filter card */}
         <div id="search" className="search-card">
           {/* Main Mode Tabs: Buy | Rent | Commercial */}
           <div style={{ display: 'flex', borderBottom: '2px solid #E2E8F0', marginBottom: '20px' }}>
@@ -185,7 +185,7 @@ export default function HeroSearch({
             <div style={{ display: 'flex', gap: '8px' }}>
               <button
                 className="btn-primary"
-                style={{ width: '100%', background: '#FD3752', border: 'none', boxShadow: '0 4px 12px rgba(253, 55, 82, 0.3)' }}
+                style={{ width: '100%', background: '#D4A64A', color: '#0B1F3A', border: 'none', boxShadow: '0 4px 12px rgba(212, 166, 74, 0.3)' }}
               >
                 <Search size={18} />
                 <span>{isTa ? 'தேடு' : 'Search'}</span>
@@ -210,8 +210,8 @@ export default function HeroSearch({
             <button
               onClick={() => onNavigate && onNavigate('post-property')}
               style={{
-                background: '#0D9488',
-                color: 'white',
+                background: '#D4A64A',
+                color: '#0B1F3A',
                 border: 'none',
                 borderRadius: '8px',
                 padding: '10px 18px',
@@ -248,7 +248,7 @@ export default function HeroSearch({
             </div>
             <div>
               <div style={{ fontWeight: '800', fontSize: '1.05rem' }}>
-                Do you know how much loan you can get? Get maximum with MS Estates!
+                Do you know how much loan you can get? Get maximum with MJ Estates!
               </div>
               <div style={{ fontSize: '0.82rem', color: '#94A3B8', marginTop: '2px' }}>
                 Pre-approved Home Loans from SBI, HDFC & ICICI Bank starting at 8.4% p.a.

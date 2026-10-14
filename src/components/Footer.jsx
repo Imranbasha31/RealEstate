@@ -19,8 +19,8 @@ export default function Footer({ lang }) {
                 boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
               }}>
                 <img
-                  src="/ms_logo.png"
-                  alt="MS Estates Logo"
+                  src="/mj_logo.png"
+                  alt="MJ Estates Logo"
                   style={{ height: '42px', width: 'auto', objectFit: 'contain', display: 'block' }}
                 />
               </div>
@@ -89,11 +89,12 @@ export default function Footer({ lang }) {
         {/* Bottom copyright line */}
         <div style={{ borderTop: '1px solid #334155', paddingTop: '24px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', fontSize: '0.8rem', color: '#64748B' }}>
           <div>
-            © {new Date().getFullYear()} MS Estates Startup — Founded by Imran Basha. All Rights Reserved.
+            © {new Date().getFullYear()} MJ Estates — Founded by Imran Basha. All Rights Reserved.
           </div>
           <div>
             100% CMDA, DTCP & RERA Compliant Legal Title Verification Portal.
           </div>
+          <a href="#admin" className="footer-admin-link">Admin Login</a>
         </div>
       </div>
     </footer>

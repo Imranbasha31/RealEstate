@@ -34,7 +34,7 @@ export default function HomeLoanPage({ lang }) {
       <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
 
         {/* Header Hero Banner (Matching Image 3 Banner) */}
-        <div style={{ background: 'linear-gradient(135deg, #0F172A 0%, #0D9488 100%)', color: 'white', padding: '40px 32px', borderRadius: '20px', textAlign: 'center', marginBottom: '32px', boxShadow: '0 10px 25px rgba(13,148,136,0.25)' }}>
+        <div className="dark-contrast-panel loan-hero-panel" style={{ background: 'linear-gradient(135deg, #0F172A 0%, #0D9488 100%)', color: 'white', padding: '40px 32px', borderRadius: '20px', textAlign: 'center', marginBottom: '32px', boxShadow: '0 10px 25px rgba(13,148,136,0.25)' }}>
           <span style={{ background: '#F59E0B', color: '#0F172A', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '800' }}>
             LOWEST INTEREST RATE FROM 8.4%
           </span>

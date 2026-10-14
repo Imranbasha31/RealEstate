@@ -35,7 +35,7 @@ export default function AdminPortal({
     reraRegistered: true,
     reraNo: 'TN/01/Layout/0' + Math.floor(100 + Math.random() * 900) + '/2024',
     featured: false,
-    image: '/ms_hero_plot.png',
+    image: '/mj_hero_plot.png',
     description: '',
       descriptionTa: ''
   });
@@ -58,7 +58,7 @@ export default function AdminPortal({
       areaCents: parseFloat(cents),
       areaDisplay: `${sqft.toLocaleString()} Sq.Ft (${cents} Cents)`,
       districtName: DISTRICTS.find(d => d.id === newProp.district)?.name || 'Chennai',
-      gallery: [newProp.image || '/ms_hero_plot.png'],
+      gallery: [newProp.image || '/mj_hero_plot.png'],
       legalVerification: {
         pattaChecked: false,
         ecClean: false,
@@ -90,16 +90,16 @@ export default function AdminPortal({
   const newLeads = leads.filter(l => l.status === 'New').length;
 
   return (
-    <div style={{ background: '#F8FAFC', padding: '36px 24px', minHeight: '80vh' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+    <div className="admin-page" style={{ background: '#F8FAFC', padding: '36px 24px', minHeight: '80vh' }}>
+      <div className="admin-content" style={{ maxWidth: '1200px', margin: '0 auto' }}>
         {/* Startup Admin Header Banner */}
-        <div style={{ background: '#0F172A', color: 'white', padding: '24px', borderRadius: '16px', marginBottom: '28px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
-          <div>
+        <div className="dark-contrast-panel admin-hero-panel" style={{ background: '#0F172A', color: 'white', padding: '24px', borderRadius: '16px', marginBottom: '28px', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px' }}>
+          <div className="admin-hero-copy">
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: '#0D9488', color: 'white', padding: '4px 10px', borderRadius: '4px', fontSize: '0.75rem', fontWeight: '800', marginBottom: '8px' }}>
               <Sparkles size={13} /> FOUNDER ADMIN PORTAL
             </div>
             <h1 style={{ fontSize: '1.8rem', fontWeight: '800', lineHeight: 1.2 }}>
-              Imran Basha — MS Estates Admin Dashboard
+              Imran Basha — MJ Estates Admin Dashboard
             </h1>
             <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: '4px', display: 'flex', gap: '16px' }}>
               <span>📞 Hotline: +91 72003 58300</span>
@@ -108,7 +108,7 @@ export default function AdminPortal({
             </p>
           </div>
 
-          <div style={{ display: 'flex', gap: '12px' }}>
+          <div className="admin-hero-actions" style={{ display: 'flex', gap: '12px' }}>
             <button
               onClick={() => setActiveTab('listings')}
               className={`filter-tab ${activeTab === 'listings' ? 'active' : ''}`}
@@ -139,7 +139,7 @@ export default function AdminPortal({
         </div>
 
         {/* Dashboard Quick Metrics */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '28px' }}>
+        <div className="admin-metrics" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px', marginBottom: '28px' }}>
           <div style={{ background: 'white', border: '1px solid #E2E8F0', padding: '20px', borderRadius: '12px' }}>
             <div style={{ fontSize: '0.8rem', fontWeight: '700', color: '#64748B', textTransform: 'uppercase' }}>Active Listings</div>
             <div style={{ fontSize: '2rem', fontWeight: '800', color: '#0F172A', marginTop: '4px' }}>{totalActive}</div>
@@ -249,12 +249,12 @@ export default function AdminPortal({
               Publish New Property Listing
             </h3>
             <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '24px' }}>
-              Add verified layout details, CMDA / DTCP approval numbers, land area, and price. Listing goes live instantly on MS Estates portal.
+              Add verified layout details, CMDA / DTCP approval numbers, land area, and price. Listing goes live instantly on MJ Estates portal.
             </p>
 
             {formSubmitted ? (
               <div style={{ background: '#F0FDF4', color: '#0F766E', padding: '24px', borderRadius: '12px', textAlign: 'center', fontWeight: '700' }}>
-                ✅ Property successfully published to MS Estates live database!
+                ✅ Property successfully published to MJ Estates live database!
               </div>
             ) : (
               <form onSubmit={handleCreateSubmit} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
@@ -382,9 +382,9 @@ export default function AdminPortal({
                     value={newProp.image}
                     onChange={(e) => setNewProp({ ...newProp, image: e.target.value })}
                   >
-                    <option value="/ms_hero_plot.png">Preset: Residential Villa Plot Layout</option>
-                    <option value="/ms_villa_house.png">Preset: Modern Independent House</option>
-                    <option value="/ms_farmland.png">Preset: Coconut Farmland Plot</option>
+                    <option value="/mj_hero_plot.png">Preset: Residential Villa Plot Layout</option>
+                    <option value="/mj_villa_house.png">Preset: Modern Independent House</option>
+                    <option value="/mj_farmland.png">Preset: Coconut Farmland Plot</option>
                   </select>
                 </div>
 
@@ -458,7 +458,7 @@ export default function AdminPortal({
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                       <a
-                        href={`https://wa.me/91${lead.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(lead.name)},%20this%20is%20Imran%20Basha%20from%20MS%20Estates.%20Regarding%20your%20site%20visit%20request...`}
+                    href={`https://wa.me/91${lead.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(lead.name)},%20this%20is%20Imran%20Basha%20from%20MJ%20Estates.%20Regarding%20your%20site%20visit%20request...`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-whatsapp"

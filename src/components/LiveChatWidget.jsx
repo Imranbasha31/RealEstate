@@ -9,7 +9,7 @@ export default function LiveChatWidget({ lang, onNavigate }) {
     {
       id: 'msg-1',
       sender: 'bot',
-      text: isTa ? 'வணக்கம்! நான் நடாஷா (MS Estates உதவி). உங்களுக்கு என்ன உதவி வேண்டும்?' : 'Hi there! I am Natasha, your MS Estates assistant. How can I help you today?',
+      text: isTa ? 'வணக்கம்! நான் நடாஷா (MJ Estates உதவி). உங்களுக்கு என்ன உதவி வேண்டும்?' : 'Hi there! I am Natasha, your MJ Estates assistant. How can I help you today?',
       time: 'Just now'
     }
   ]);
@@ -65,7 +65,7 @@ export default function LiveChatWidget({ lang, onNavigate }) {
           <button
             onClick={() => setIsOpen(true)}
             style={{
-              background: '#FD3752', // Signature NoBroker red
+              background: '#D4A64A',
               color: 'white',
               border: 'none',
               borderRadius: '28px',
@@ -95,7 +95,7 @@ export default function LiveChatWidget({ lang, onNavigate }) {
                 <Bot size={18} color="white" />
               </div>
               <div>
-                <div style={{ fontWeight: '800', fontSize: '0.88rem' }}>Natasha • MS Assistant</div>
+                <div style={{ fontWeight: '800', fontSize: '0.88rem' }}>Natasha • MJ Assistant</div>
                 <div style={{ fontSize: '0.68rem', color: '#4ADE80' }}>● Active Online</div>
               </div>
             </div>

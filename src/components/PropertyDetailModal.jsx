@@ -20,7 +20,7 @@ export default function PropertyDetailModal({ property, lang, onClose, onCreateL
   };
 
   const whatsappUrl = `https://wa.me/917200358300?text=${encodeURIComponent(
-    `Hello Founder Imran Basha (MS Estates),\nMy Name: ${formData.name || 'Interested Buyer'}\nPhone: ${formData.phone}\nInterested Property: ${property.title} (${property.priceLabel})\nLocation: ${property.location}`
+    `Hello Founder Imran Basha (MJ Estates),\nMy Name: ${formData.name || 'Interested Buyer'}\nPhone: ${formData.phone}\nInterested Property: ${property.title} (${property.priceLabel})\nLocation: ${property.location}`
   )}`;
 
   return (
@@ -41,7 +41,7 @@ export default function PropertyDetailModal({ property, lang, onClose, onCreateL
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <ShieldCheck size={20} color="#F59E0B" />
             <span style={{ fontWeight: '700', fontSize: '1rem' }}>
-              {isTa ? 'ஆவணங்கள் சரிபார்க்கப்பட்ட மனை' : 'MS Verified Legal Document Scorecard'}
+              {isTa ? 'ஆவணங்கள் சரிபார்க்கப்பட்ட மனை' : 'MJ Verified Legal Document Scorecard'}
             </span>
           </div>
           <button 
@@ -179,7 +179,7 @@ export default function PropertyDetailModal({ property, lang, onClose, onCreateL
                   {isTa ? 'நேரடி இடப் பார்வை முன்பதிவு' : 'Schedule Free Site Visit'}
                 </h3>
                 <p style={{ fontSize: '0.85rem', color: '#64748B', marginBottom: '16px' }}>
-                  Founder Imran Basha and the MS Estates field team will escort you directly to inspect the plot.
+                  Founder Imran Basha and the MJ Estates field team will escort you directly to inspect the property.
                 </p>
 
                 {/* Instant WhatsApp Quick Button */}
@@ -200,7 +200,7 @@ export default function PropertyDetailModal({ property, lang, onClose, onCreateL
 
                 {submitted ? (
                   <div style={{ background: '#F0FDF4', color: '#0F766E', padding: '16px', borderRadius: '10px', textAlign: 'center', fontWeight: '700' }}>
-                    ✅ {isTa ? 'நன்றி! இம்ரான் பாஷா உங்கள் கோரிக்கையை பெற்றுக்கொண்டார்.' : 'Thank you! Imran Basha & MS Estates team will call you shortly.'}
+                    ✅ {isTa ? 'நன்றி! இம்ரான் பாஷா உங்கள் கோரிக்கையை பெற்றுக்கொண்டார்.' : 'Thank you! Imran Basha & MJ Estates team will call you shortly.'}
                   </div>
                 ) : (
                   <form onSubmit={handleFormSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>

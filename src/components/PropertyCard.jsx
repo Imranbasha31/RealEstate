@@ -1,7 +1,7 @@
 import React from 'react';
 import { MapPin, ShieldCheck, Phone, MessageSquare, Heart, Compass, Road, FileText, CheckCircle2 } from 'lucide-react';
 
-export default function PropertyCard({ property, lang, isSaved, onToggleSave, onOpenDetail }) {
+export default function PropertyCard({ property, lang, isSaved, onToggleSave, onOpenDetail, isAuthenticated, onRequireAuth }) {
   const isTa = lang === 'ta';
 
   return (
@@ -128,6 +128,12 @@ export default function PropertyCard({ property, lang, isSaved, onToggleSave, on
           <a
             href="tel:+917200358300"
             className="btn-outline"
+            onClick={(event) => {
+              if (!isAuthenticated) {
+                event.preventDefault();
+                onRequireAuth?.();
+              }
+            }}
             style={{ padding: '8px', fontSize: '0.8rem' }}
           >
             <Phone size={14} />
@@ -135,10 +141,16 @@ export default function PropertyCard({ property, lang, isSaved, onToggleSave, on
           </a>
 
           <a
-            href={`https://wa.me/917200358300?text=Hi%20Imran%20Basha%20(MS%20Estates),%20I%20am%20interested%20in%20${encodeURIComponent(property.title)}%20(${property.priceLabel}).`}
+            href={`https://wa.me/917200358300?text=Hi%20Imran%20Basha%20(MJ%20Estates),%20I%20am%20interested%20in%20${encodeURIComponent(property.title)}%20(${property.priceLabel}).`}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-whatsapp"
+            onClick={(event) => {
+              if (!isAuthenticated) {
+                event.preventDefault();
+                onRequireAuth?.();
+              }
+            }}
             style={{ padding: '8px', fontSize: '0.8rem' }}
           >
             <MessageSquare size={14} />

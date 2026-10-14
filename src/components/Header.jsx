@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Building2, Phone, Globe, Heart, ShieldCheck, User, Lock, PlusCircle, CreditCard, FileText, Landmark, Menu, X, Search, Home } from 'lucide-react';
+import { Building2, Phone, Globe, Heart, ShieldCheck, User, PlusCircle, CreditCard, FileText, Landmark, Menu, X, Search, Home } from 'lucide-react';
 
 export default function Header({
   lang,
@@ -15,6 +15,12 @@ export default function Header({
   const isTa = lang === 'ta';
 
   const handleNavClick = (view) => {
+    const protectedViews = ['post-property', 'pay-rent', 'rental-agreement', 'home-loans', 'user'];
+    if (protectedViews.includes(view) && !user) {
+      onOpenAuthModal?.();
+      setMobileMenuOpen(false);
+      return;
+    }
     setCurrentView(view);
     setMobileMenuOpen(false);
   };
@@ -36,26 +42,6 @@ export default function Header({
           <a href="tel:+917200358300" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px', fontWeight: '700', fontSize: '0.78rem' }}>
             <Phone size={13} /> <span className="top-phone-text">+91 72003 58300</span>
           </a>
-
-          {/* Admin quick access badge on top bar */}
-          <button
-            onClick={() => handleNavClick('admin')}
-            style={{
-              background: currentView === 'admin' ? '#0D9488' : 'rgba(255,255,255,0.12)',
-              border: 'none',
-              borderRadius: '4px',
-              padding: '2px 8px',
-              color: 'white',
-              fontSize: '0.72rem',
-              fontWeight: '700',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '4px'
-            }}
-          >
-            <Lock size={11} /> Admin
-          </button>
 
           <button 
             onClick={() => setLang(isTa ? 'en' : 'ta')}
@@ -85,8 +71,8 @@ export default function Header({
           {/* Official Brand Logo */}
           <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer', flexShrink: 0 }} onClick={() => handleNavClick('buyer')}>
             <img
-              src="/ms_logo.png"
-              alt="MS ESTATES - Verified Properties"
+              src="/mj_logo.png"
+              alt="MJ ESTATES - Verified Properties"
               className="header-brand-logo"
             />
           </div>
@@ -182,7 +168,7 @@ export default function Header({
               {!user ? (
                 <div style={{ display: 'flex', gap: '4px' }}>
                   <button
-                    onClick={onOpenAuthModal}
+                    onClick={() => handleNavClick('login')}
                     style={{
                       background: 'transparent',
                       border: 'none',
@@ -196,7 +182,7 @@ export default function Header({
                     Log in
                   </button>
                   <button
-                    onClick={onOpenAuthModal}
+                    onClick={() => handleNavClick('signup')}
                     style={{
                       background: '#FD3752',
                       color: 'white',
@@ -352,36 +338,16 @@ export default function Header({
               </button>
             </div>
 
-            <button
-              onClick={() => handleNavClick('admin')}
-              style={{
-                width: '100%',
-                padding: '10px',
-                borderRadius: '8px',
-                border: 'none',
-                background: '#0D9488',
-                color: 'white',
-                fontWeight: '800',
-                fontSize: '0.85rem',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px'
-              }}
-            >
-              <Lock size={14} /> Admin Portal (Imran Basha)
-            </button>
-
             {!user ? (
               <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
                 <button
-                  onClick={() => { onOpenAuthModal(); setMobileMenuOpen(false); }}
+                  onClick={() => handleNavClick('login')}
                   style={{ flex: 1, padding: '10px', borderRadius: '8px', border: '1px solid #CBD5E1', background: 'white', fontWeight: '700', color: '#0F172A' }}
                 >
                   Log in
                 </button>
                 <button
-                  onClick={() => { onOpenAuthModal(); setMobileMenuOpen(false); }}
+                  onClick={() => handleNavClick('signup')}
                   style={{ flex: 1, padding: '10px', borderRadius: '8px', border: 'none', background: '#FD3752', color: 'white', fontWeight: '700' }}
                 >
                   Sign up

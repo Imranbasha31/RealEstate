@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import UserDashboard from '../UserDashboard'
 
-const mockSaved = [{ id: 'p1', title: 'A', image: '/ms_hero_plot.png', priceLabel: '₹10 Lakhs', location: 'L' }]
+const mockSaved = [{ id: 'p1', title: 'A', image: '/mj_hero_plot.png', priceLabel: '₹10 Lakhs', location: 'L' }]
 const mockLeads = [{ id: 'l1', propTitle: 'A', date: '2026-01-01', status: 'New', message: 'Hello' }]
 
 describe('UserDashboard buttons', () => {

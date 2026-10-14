@@ -111,8 +111,8 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess, lang }) {
           borderRight: '1px solid #E2E8F0'
         }}>
           <img
-            src="/ms_logo.png"
-            alt="MS Estates Logo"
+            src="/mj_logo.png"
+            alt="MJ Estates Logo"
             style={{
               height: '56px',
               width: 'auto',

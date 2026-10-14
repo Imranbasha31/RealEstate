@@ -7,18 +7,18 @@ export const PROPERTY_TYPES = [
 ];
 
 export const DISTRICTS = [
-  { id: 'chennai', name: 'Chennai', count: 215, img: '/ms_hero_plot.png', trend: '₹3,200 - ₹8,500/sq.ft' },
-  { id: 'thiruvallur', name: 'Thiruvallur', count: 180, img: '/ms_villa_house.png', trend: '₹1,200 - ₹2,800/sq.ft' },
-  { id: 'kanchipuram', name: 'Kanchipuram', count: 145, img: '/ms_farmland.png', trend: '₹1,100 - ₹2,600/sq.ft' },
-  { id: 'chengalpattu', name: 'Chengalpattu', count: 160, img: '/ms_hero_plot.png', trend: '₹1,500 - ₹3,600/sq.ft' },
-  { id: 'coimbatore', name: 'Coimbatore', count: 142, img: '/ms_villa_house.png', trend: '₹1,800 - ₹3,500/sq.ft' },
-  { id: 'madurai', name: 'Madurai', count: 88, img: '/ms_farmland.png', trend: '₹1,200 - ₹2,400/sq.ft' }
+  { id: 'chennai', name: 'Chennai', count: 215, img: '/mj_hero_plot.png', trend: '₹3,200 - ₹8,500/sq.ft' },
+  { id: 'thiruvallur', name: 'Thiruvallur', count: 180, img: '/mj_villa_house.png', trend: '₹1,200 - ₹2,800/sq.ft' },
+  { id: 'kanchipuram', name: 'Kanchipuram', count: 145, img: '/mj_farmland.png', trend: '₹1,100 - ₹2,600/sq.ft' },
+  { id: 'chengalpattu', name: 'Chengalpattu', count: 160, img: '/mj_hero_plot.png', trend: '₹1,500 - ₹3,600/sq.ft' },
+  { id: 'coimbatore', name: 'Coimbatore', count: 142, img: '/mj_villa_house.png', trend: '₹1,800 - ₹3,500/sq.ft' },
+  { id: 'madurai', name: 'Madurai', count: 88, img: '/mj_farmland.png', trend: '₹1,200 - ₹2,400/sq.ft' }
 ];
 
 export const PROPERTIES = [
   {
     id: 'prop-1',
-    title: 'MS Layout — CMDA & RERA Approved Plot in Thiruvallur',
+    title: 'MJ Layout — CMDA & RERA Approved Plot in Thiruvallur',
     titleTa: 'எம்.எஸ் லேஅவுட் - திருவள்ளூர் CMDA அங்கீகரிக்கப்பட்ட மனை',
     district: 'thiruvallur',
     districtName: 'Thiruvallur',
@@ -41,11 +41,11 @@ export const PROPERTIES = [
     status: 'Available',
     verificationStatus: 'Professionally reviewed',
     lastConfirmed: '08 Sep 2026',
-    image: '/ms_hero_plot.png',
+    image: '/mj_hero_plot.png',
     gallery: [
-      '/ms_hero_plot.png',
-      '/ms_villa_house.png',
-      '/ms_farmland.png'
+      '/mj_hero_plot.png',
+      '/mj_villa_house.png',
+      '/mj_farmland.png'
     ],
     description: 'CMDA & RERA approved residential plot near Veppampattu Railway Station, Thiruvallur corridor. 30ft blacktop tar road, streetlights, sweet drinking water table, and seller-provided Patta transfer information subject to independent review.',
     descriptionTa: 'வெப்பம்பட்டு ரயில் நிலையம் அருகில் CMDA அங்கீகரிக்கப்பட்ட வீட்டு மனை. உடனடி பட்டா மாற்றம் மற்றும் தார் சாலை வசதி.',
@@ -72,7 +72,7 @@ export const PROPERTIES = [
   },
   {
     id: 'prop-2',
-    title: 'MS Prime City — Luxury 3BHK Villa in Chennai OMR',
+    title: 'MJ Prime City — Luxury 3BHK Villa in Chennai OMR',
     titleTa: 'எம்.எஸ் ப்ரைம் சிட்டி - சென்னை OMR 3BHK வில்லா',
     district: 'chennai',
     districtName: 'Chennai',
@@ -97,10 +97,10 @@ export const PROPERTIES = [
     status: 'Available',
     verificationStatus: 'Professionally reviewed',
     lastConfirmed: '07 Sep 2026',
-    image: '/ms_villa_house.png',
+    image: '/mj_villa_house.png',
     gallery: [
-      '/ms_villa_house.png',
-      '/ms_hero_plot.png'
+      '/mj_villa_house.png',
+      '/mj_hero_plot.png'
     ],
     description: 'Contemporary 3BHK independent villa along Old Mahabalipuram Road (OMR) IT Expressway. Teak wood fittings, modular kitchen, Metro water connection, CCTV surveillance, and covered car parking.',
     descriptionTa: 'சென்னை OMR சாலையில் அமைந்த புதிய 3BHK சுதந்திரமான வில்லா. தேக்கு மர கதவுகள் மற்றும் மெட்ரோ குடிநீர் வசதி.',
@@ -125,7 +125,7 @@ export const PROPERTIES = [
   },
   {
     id: 'prop-3',
-    title: 'MS Agri Paradise — Coconut Farmland near Kanchipuram',
+    title: 'MJ Agri Paradise — Coconut Farmland near Kanchipuram',
     titleTa: 'எம்.எஸ் அக்ரி பாரடைஸ் - காஞ்சிபுரம் தென்னை நிலம்',
     district: 'kanchipuram',
     districtName: 'Kanchipuram',
@@ -147,10 +147,10 @@ export const PROPERTIES = [
     status: 'Available',
     verificationStatus: 'Documents collected',
     lastConfirmed: '06 Sep 2026',
-    image: '/ms_farmland.png',
+    image: '/mj_farmland.png',
     gallery: [
-      '/ms_farmland.png',
-      '/ms_hero_plot.png'
+      '/mj_farmland.png',
+      '/mj_hero_plot.png'
     ],
     description: 'Fertile 50 cents agricultural coconut grove in Uthiramerur, Kanchipuram district. 40 yielding coconut trees, free agri EB connection, sweet groundwater, clear single-owner Patta verified by Imran Basha & team.',
     descriptionTa: 'காஞ்சிபுரம் மாவட்டத்தில் 50 சென்ட் விவசாய தென்னை தோப்பு நிலம். 40 காய்க்கும் மரங்கள் மற்றும் இலவச மின்சாரம்.',
@@ -174,7 +174,7 @@ export const PROPERTIES = [
   },
   {
     id: 'prop-4',
-    title: 'MS Green Valley — DTCP Approved Plot in Coimbatore',
+    title: 'MJ Green Valley — DTCP Approved Plot in Coimbatore',
     titleTa: 'எம்.எஸ் கிரீன் வேலி - கோயம்புத்தூர் DTCP மனை',
     district: 'coimbatore',
     districtName: 'Coimbatore',
@@ -197,8 +197,8 @@ export const PROPERTIES = [
     status: 'Available',
     verificationStatus: 'Owner confirmed',
     lastConfirmed: '05 Sep 2026',
-    image: '/ms_hero_plot.png',
-    gallery: ['/ms_hero_plot.png'],
+    image: '/mj_hero_plot.png',
+    gallery: ['/mj_hero_plot.png'],
     description: 'DTCP approved villa plot in Vadavalli, Coimbatore. Ready for immediate construction.',
     descriptionTa: 'கோயம்புத்தூர் வடவள்ளியில் DTCP அங்கீகரிக்கப்பட்ட வீட்டு மனை.',
     legalVerification: {

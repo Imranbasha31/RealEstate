@@ -26,7 +26,7 @@ export default function PayRentPage({ lang }) {
         {/* Page Title Header */}
         <div style={{ textAlign: 'center', marginBottom: '32px' }}>
           <span style={{ background: '#EEF2FF', color: '#4F46E5', padding: '4px 12px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '800' }}>
-            NOBROKER / MS ESTATES PAYMENTS
+            MJ ESTATES PAYMENTS
           </span>
           <h1 style={{ fontSize: '2rem', fontWeight: '800', color: '#0F172A', marginTop: '8px' }}>
             {isTa ? 'கிரெடிட் கார்டு மூலம் வாடகை & பள்ளி கட்டணம் செலுத்துங்கள்' : 'Pay House Rent & Tuition Fee with Credit Card'}
